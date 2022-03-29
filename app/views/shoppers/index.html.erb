@@ -1,4 +1,4 @@
-<h1>View Shopping Lists</h1>
+<h1><%=  pluralize(@shoppers.count, "Shopping List") %></h1>
 <table>
 	<thead>
 		<th>Shopping List Name</th>
@@ -7,16 +7,17 @@
 		<th>Actions</th>
 	</thead>
 	<tbody>
-		
+		<% @shoppers.each do |shopper| %>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><%= shopper.shopping_list_name %></td>
+			<td><%= shopper.store %></td>
+			<td><%= shopper.date %></td>
 			<td>
-	<a href="/shoppers/ ">Show</a>	|
-	<a href="/shoppers/edit">Edit</a>	|
-	<a href="/shoppers/delete">Delete</a>	</td>
+	<a href="/shoppers/<%= shopper.id %>">Show Shopping List</a>	|
+	<a href="/shoppers/<%= shopper.id %>/edit">Edit Shopping List Name</a>	|
+	<a href="/shoppers/<%= shopper.id %>/delete">Delete Shopping List</a>	</td>
 		</tr>
+		<% end %>
 	</tbody>
 </table>
 <a href="/shoppers/new">Create Shopping List</a>
