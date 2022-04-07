@@ -11,8 +11,33 @@ class ShoppersController < ApplicationController
 		if shopper.save
 			redirect_to "/shoppers"
 		else
-			redirect_to "/shoppers/new"
+			flash[:errors] = shopper.errors.full_messages
+			redirect_to "/shoppers/new"	
 		end
+	end
+
+	def edit
+		@shoppers = Shoppinglist.find(params[:id])
+	end 
+
+	def update
+	shopper = Shoppinglist.find(params[:id])
+	if shopper.update(shopper_params)
+		redirect_to "/shoppers"
+	else
+		flash[:errors] = shopper.errors.full_messages
+		redirect_to "/shoppers/#{shopper.id}/edit"
+	end
+end
+
+	def delete
+		@shopper = Shoppinglist.find(params[:id])
+		end 
+
+	def destroy
+		shopper = Shoppinglist.find(params[:id])
+		shopper.destroy
+		redirect_to "/shoppers"
 	end
 
 	private

@@ -1,0 +1,22 @@
+<h1>Edit <%= @shopper.shopping_list_name %></h1>
+<form action="/shoppers/<%= @shopper.id %>" method="post">
+	<div>
+		<label>Shopping List Name:</label>
+		<input type="text" name="shopper[shopping_list_name]" value="<%= @shopper.shopping_list_name %>">		
+	</div>
+	<div>
+		<label>Store:</label>
+		<input type="text" name="shopper[store]" value="<%= @shopper.store %>">		
+	</div>
+	<div>
+		<label>Date:</label>
+		<input type="text" name="shopper[date]" value="<%= @shopper.date %>">		
+	</div>
+	<input type="submit" value="update">
+	
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<% end %>
