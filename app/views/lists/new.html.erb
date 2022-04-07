@@ -1,0 +1,22 @@
+<h1>Create Shopping List</h1>
+<form action="/lists" method="post">
+	<div>
+		<label>Item Name:</label>
+		<input type="text" name="list[item_name]">		
+	</div>
+	<div>
+		<label>Price:</label>
+		<input type="text" name="list[price]">		
+	</div>
+	<div>
+		<label>Quanity:</label>
+		<input type="text" name="list[quanity]">		
+	</div>
+	<input type="submit" value="Create">
+	
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<% end %>

@@ -1,25 +1,23 @@
-<h1> <%= shopper.id %> Shopping List Items </h1>
+<h1> Shopping List Items </h1>
 <table>
 	<thead>
-		<th>Shopping List Name</th>
 		<th>Item Name</th>
 		<th>Price</th>
-		<th>Quanity</th>
+		<th>Quantity</th>
 		<th>Actions</th>
 	</thead>
 	<tbody>
 		<% @lists.each do |list| %>
 		<tr>
-			<td><%= shopper.shopping_list_name %></td>
+			<td></td>
 			<td><%= list.item_name %></td>
 			<td><%= list.price %></td>
-			<td><%= list.quanity %></td>
+			<td><%= list.quantity %></td>
 			<td>
-	<a href="/lists/<%= list.id %>">Show Shopping List Items</a>	|
 	<a href="/lists/<%= list.id %>/edit">Edit Shopping List Name</a>	|
 	<a href="/lists/<%= list.id %>/delete">Delete Shopping List</a>	</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/list/new">Create Shopping List Item</a>
+<a href="/lists/new">Create Shopping List Item</a>

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "shoppers/:id/delete" => "shoppers#delete"
   delete "shoppers/:id" => "shoppers#destroy"
   get "lists" => "lists#index"
+  get "lists/new" => "lists#new"
+  post "lists" => "lists#create"
 end

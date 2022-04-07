@@ -8,7 +8,7 @@ class ListsController < ApplicationController
 
 	def create
 		list = Shoppinglistitem.new(list_params)
-		if shopper.save
+		if list.save
 			redirect_to "/lists"
 		else
 			flash[:errors] = shopper.errors.full_messages
@@ -16,7 +16,7 @@ class ListsController < ApplicationController
 		end
 	end
 
-	
+
 	private
 	def list_params
 		# params is a Rails object that gets the specified request

@@ -17,7 +17,7 @@ class ShoppersController < ApplicationController
 	end
 
 	def edit
-		@shoppers = Shoppinglist.find(params[:id])
+		@shopper = Shoppinglist.find(params[:id])
 	end 
 
 	def update
