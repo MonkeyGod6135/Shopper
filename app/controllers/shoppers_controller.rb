@@ -6,6 +6,10 @@ class ShoppersController < ApplicationController
 	def new
 	end
 
+	def show
+	@shopper = Shoppinglist.find(params[:id]).shoppinglistitems
+	end
+
 	def create
 		shopper = Shoppinglist.new(shopper_params)
 		if shopper.save

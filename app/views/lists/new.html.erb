@@ -1,22 +1,22 @@
-<h1>Create Shopping List</h1>
+<h1>Create Shopping List Item</h1>
 <form action="/lists" method="post">
-	<div>
+	<div class="form-group">
 		<label>Item Name:</label>
-		<input type="text" name="list[item_name]">		
+		<input type="text" name="list[item_name]" class="form-control">		
 	</div>
-	<div>
+	<div class="form-group">
 		<label>Price:</label>
-		<input type="text" name="list[price]">		
+		<input type="text" name="list[price]" class="form-control">		
 	</div>
-	<div>
+	<div class="form-group">
 		<label>Quanity:</label>
-		<input type="text" name="list[quanity]">		
+		<input type="text" name="list[quantity]" class="form-control">		
 	</div>
-	<input type="submit" value="Create">
+	<input type="submit" value="Create" class="btn btn-primary">
 	
 </form>
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<div><%= e %></div>
+	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
 <% end %>

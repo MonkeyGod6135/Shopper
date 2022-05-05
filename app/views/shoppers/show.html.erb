@@ -1,0 +1,18 @@
+<h1>View Shopping List Items </h1>
+<table>
+	<thead>
+		<th scope="col">Item Name</th>
+		<th scope="col">Price</th>
+		<th scope="col">Quantity</th>
+	</thead>
+	<tbody>
+		<% @lists.each do |list| %>
+		<tr>
+			<td><%= list.item_name %></td>
+			<td><%= list.price %></td>
+			<td><%= list.quantity %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/shoppers">View Shopping Lists</a>

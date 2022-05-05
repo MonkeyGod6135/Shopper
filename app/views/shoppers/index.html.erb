@@ -1,10 +1,10 @@
 <h1><%=  pluralize(@shoppers.count, "Shopping List") %></h1>
-<table>
+<table class="table table-dark table-striped">
 	<thead>
-		<th>Shopping List Name</th>
-		<th>Store</th>
-		<th>Date</th>
-		<th>Actions</th>
+		<th scope="col">Shopping List Name</th>
+		<th scope="col">Store</th>
+		<th scope="col">Date</th>
+		<th scope="col">Actions</th>
 	</thead>
 	<tbody>
 		<% @shoppers.each do |shopper| %>
@@ -13,11 +13,11 @@
 			<td><%= shopper.store %></td>
 			<td><%= shopper.date %></td>
 			<td>
-	<a href="/shoppers/<%= shopper.id %>">Show Shopping List Items</a>	|
-	<a href="/shoppers/<%= shopper.id %>/edit">Edit Shopping List Name</a>	|
-	<a href="/shoppers/<%= shopper.id %>/delete">Delete Shopping List</a>	</td>
+	<a href="/shoppers/<%= shopper.id %>">Show</a>	|
+	<a href="/shoppers/<%= shopper.id %>/edit">Edit</a>	|
+	<a href="/shoppers/<%= shopper.id %>/delete">Delete</a>	</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/shoppers/new">Create Shopping List</a>
+<a href="/shoppers/new" class="btn btn-primary">Create</a>

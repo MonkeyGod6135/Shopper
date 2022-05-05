@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   get "lists" => "lists#index"
   get "lists/new" => "lists#new"
   post "lists" => "lists#create"
+  get "lists/:id/edit" => "lists#edit"
+  post "lists/:id" => "lists#update"
+  get "lists/:id/delete" => "lists#delete"
+  delete "lists/:id" => "lists#destroy"
+  get "appearances" => "appearances#index"
+  post "appearances" => "appearances#create"
+  get "shoppers/:id" => "shoppers#show"
 end

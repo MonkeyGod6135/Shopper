@@ -1,0 +1,28 @@
+<h1>Add Item To Shopping List</h1>
+<form action="/appearances" method="post">
+	<div class="form-group">
+		<label>Shopping List:</label>
+		<select name="appearance[shoppinglists_id]" class="form-select" aria-label="Default select example">
+		<option></option>	
+		<% @shoppers.each do |shopper| %>
+		<option value="<%= shopper.id %>"><%= shopper.shopping_list_name %></option>
+		<% end %>
+		</select>	
+	</div>
+	<div class="form-group">
+		<label>Shopping List Item:</label>
+		<select name="appearance[shoppinglistitems_id]" class="form-select" aria-label="Default select example">
+		<option></option>	
+		<% @lists.each do |list| %>
+		<option value="<%= list.id %>"><%= list.item_name %></option>
+		<% end %>
+		</select>		
+	</div>
+	<input type="submit" value="Create" class="btn btn-primary">
+	
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<% end %>
