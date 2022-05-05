@@ -1,6 +1,6 @@
 class Shoppinglistitem < ApplicationRecord
 	
-	has_many :listitems, dependent: :destroy 
+	# has_many :listitems, dependent: :destroy 
 	
 	has_many :shoppinglists, through: :listitems
 	

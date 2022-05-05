@@ -3,7 +3,7 @@
 	<div class="form-group">
 		<label>Shopping List:</label>
 		<select name="appearance[shoppinglists_id]" class="form-select" aria-label="Default select example">
-		<option></option>	
+		<option selected>Open this select menu</option>
 		<% @shoppers.each do |shopper| %>
 		<option value="<%= shopper.id %>"><%= shopper.shopping_list_name %></option>
 		<% end %>
@@ -12,7 +12,7 @@
 	<div class="form-group">
 		<label>Shopping List Item:</label>
 		<select name="appearance[shoppinglistitems_id]" class="form-select" aria-label="Default select example">
-		<option></option>	
+		<option selected>Open this select menu</option>
 		<% @lists.each do |list| %>
 		<option value="<%= list.id %>"><%= list.item_name %></option>
 		<% end %>
